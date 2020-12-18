@@ -1,0 +1,7 @@
+{
+    "env": {
+        "mongoUser": "cr31293",
+        "mongoPass": "Coltsfan1808",
+        "mongoCollection": "salesdashboard"
+    }
+}
