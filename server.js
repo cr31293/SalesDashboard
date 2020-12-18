@@ -1,7 +1,7 @@
-const express = require('express');
-const session = require('express-session');
-const mongoose = require('mongoose');
-const routes = require('./routes');
+const express = require("express");
+const session = require("express-session");
+const mongoose = require("mongoose");
+const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -13,10 +13,12 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //Session to track login status
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(
+  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
+);
 
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+  app.use(express.static("client/build"));
 }
 
 app.use(routes);
@@ -24,12 +26,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // connect to mongodb
-mongoose.connect(process.env.MONGODB_URI || `mongodb+srv://${process.env.mongoUser}:${process.env.mongoPass}@cluster0.ftj0e.mongodb.net/${process.env.mongoCollection}?retryWrites=true&w=majority`,
-{ useNewUrlParser: true, useUnifiedTopology: true }
-).then(() => {
-    app.listen(PORT, function() {
-        console.log(`API server now listening on port ${PORT}`)
+mongoose
+  .connect(
+    process.env.MONGODB_URI ||
+      `mongodb+srv://${process.env.mongoUser}:${process.env.mongoPass}@cluster0.ftj0e.mongodb.net/${process.env.mongoCollection}?retryWrites=true&w=majority`,
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  )
+  .then(() => {
+    app.listen(PORT, function () {
+      console.log(`API server now listening on port ${PORT}`);
     });
-}).catch(err => {
+  })
+  .catch((err) => {
     console.log(err);
-});
+  });
