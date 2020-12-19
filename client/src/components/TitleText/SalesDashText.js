@@ -14,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "45%",
         marginTop: "-10em",
         borderBottomStyle: "solid",
-        borderBottomColor: "#4d687e"
+        borderBottomWidth: ".2em",
+        borderBottomColor: "#eb1484"
     },
     titleOne: {
         display: "flex",

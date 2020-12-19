@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/Nav/Header';
 import SalesDashText from '../components/TitleText/SalesDashText';
+import LoginButton from '../components/Buttons/LoginButton';
 
 export default function Landing() {
 
@@ -11,7 +12,7 @@ export default function Landing() {
             </div>
             <div>
             <SalesDashText />
-
+            <LoginButton />
             </div>
         </>
     );
