@@ -3,7 +3,7 @@ const salesPersonController = require('../../controllers/salesPersonController')
 
 router
     .route('/')
-    .route(salesPersonController.create);
+    .post(salesPersonController.create);
 
 router
     .route('/:id')

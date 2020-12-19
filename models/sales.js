@@ -8,7 +8,7 @@ const saleSchema = new Schema({
     carModelYear: { type: Date, required: true },
     saleAmount: { type: Number, required: true },
     sellerUserId: { type: String, required: true },
-    date: { type: Date, required: true }
+    saleDate: { type: Date, required: true }
 });
 
 const Sale = mongoose.model('Sales', saleSchema);

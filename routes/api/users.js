@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const userController = ("../../controllers/userController");
+const userController = require("../../controllers/userController");
 
 router
-    .route('/')
+    .route("/")
     .post(userController.create);
 
 router
-    .route('/id')
+    .route('/:id')
     .delete(userController.remove);
 
 router

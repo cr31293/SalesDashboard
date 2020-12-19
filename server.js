@@ -1,11 +1,9 @@
 const express = require("express");
 const session = require("express-session");
 const routes = require('./routes');
-const User = require('./models/user');
-const passport = require('.config/passport');
+const passport = require('./config/passport');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
-const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -33,12 +31,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 mongoose
   .connect(
     process.env.MONGODB_URI ||
-      `mongodb+srv://${process.env.mongoUser}:${process.env.mongoPass}@cluster0.ftj0e.mongodb.net/${process.env.mongoCollection}?retryWrites=true&w=majority`,
+      `mongodb+srv://${process.env.mongoUser}:${process.env.mongoPassword}@cluster0.ftj0e.mongodb.net/salesdashboard?retryWrites=true&w=majority`,
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then(() => {
     app.listen(PORT, function () {
-      console.log(`test API server now listening on port ${PORT}`);
+      console.log(`API server now listening on port ${PORT}`);
     });
   })
   .catch((err) => {
