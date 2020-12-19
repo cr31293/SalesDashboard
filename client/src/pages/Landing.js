@@ -11,7 +11,8 @@ export default function Landing() {
                 <Header />
             </div>
             <div>
-            <SalesDashText />
+            <SalesDashText>
+            </SalesDashText>
             <LoginButton />
             </div>
         </>
