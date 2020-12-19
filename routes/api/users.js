@@ -7,7 +7,7 @@ router
 
 router
     .route('/id')
-    .post(userController.create);
+    .post(userController.remove);
 
 router
     .route('/:email')
