@@ -7,9 +7,9 @@ const salesPersonRoutes = require('./salespersons');
 router.use('/users', userRoutes);
 
 //Sales routes
-router.user('/sales', salesRoutes);
+router.use('/sales', salesRoutes);
 
 //Salesperson routes
-router.user('/salesperson', salesPersonRoutes);
+router.use('/salesperson', salesPersonRoutes);
 
 module.exports = router;

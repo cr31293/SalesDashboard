@@ -1,5 +1,9 @@
 const express = require("express");
 const session = require("express-session");
+const routes = require('./routes');
+const User = require('./models/user');
+const passport = require('.config/passport');
+const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const routes = require("./routes");
 
@@ -34,7 +38,7 @@ mongoose
   )
   .then(() => {
     app.listen(PORT, function () {
-      console.log(`API server now listening on port ${PORT}`);
+      console.log(`test API server now listening on port ${PORT}`);
     });
   })
   .catch((err) => {
