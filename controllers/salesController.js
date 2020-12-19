@@ -7,7 +7,7 @@ module.exports = {
         .then(data => {console.log(data); req.json(data)})
         .catch(err => res.status(422).json(err));
     },
-    find: function(req, res) {
+    findBySellerId: function(req, res) {
         db.Sales
         .findById({ sellerUserId: req.params.sellerUserId })
         .then(data => res.json(data))
